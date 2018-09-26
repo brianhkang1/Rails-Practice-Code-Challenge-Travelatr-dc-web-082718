@@ -1,0 +1,13 @@
+<h1><%= @destination.name %></h1>
+
+<h3>5 Most Recent Posts:</h3>
+<ul>
+  <% @destination.most_recent_5_posts.each do |post| %>
+    <li><%= link_to post[0], post_path(post[1]) %></li>
+  <% end %>
+</ul>
+<br>
+
+<h3>Featured Post:  <%= link_to @destination.featured_post[:title], post_path(@destination.featured_post[:id]) %></h3>
+
+<h3>Average Age of Bloggers: <%= @destination.average_age %></h3>
